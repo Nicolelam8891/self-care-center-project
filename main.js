@@ -1,5 +1,4 @@
-//Array of affirmations:
-
+// 💠 Array of affirmations 💠 
 var affirmations = [
 "I am enough. I have enough",
 "I am in the right place, at the right time, doing the right thing",
@@ -22,7 +21,7 @@ var affirmations = [
 "I trust myself to make the right decisions",
 ]
 
-//Array of mantras:
+// 💠 Array of mantras 💠 
 var mantras = [
 "I am loveable. I am loved",
 "I am destined to find love",
@@ -46,34 +45,35 @@ var mantras = [
 "I am the sky, the rest of weather",    
 ]
 
-//QuerySelectors for receiving message: TOP SECTION BOX//
+//🔺QUERYSELECTORS🔺//
+
+//QuerySelectors for receiving message: TOP SECTION BOX🔺
 var receiveMessageButton = document.querySelector('#form');
 var affirmationButton = document.querySelector('#option1');
 var mantraButton = document.querySelector('#option2');
 
-//QuerySelectors for receiving message: MIDDLE SECTION BOX//
+//QuerySelectors for receiving message: MIDDLE SECTION BOX🔺
 var meditationIcon = document.querySelector('#meditationIcon');
 var hiddenMessage = document.querySelector('#hiddenMessage');
 
-//QuerySelectors for user message: HIDDEN FORM//
+//QuerySelectors for user message: HIDDEN FORM🔺
 var userMessageForm = document.querySelector('#userMessageForm');
 var affirmationUserButton = document.querySelector('#userOption1');
 var mantraUserButton = document.querySelector('#userOption2');
 var userHiddenBox = document.querySelector('#hiddenBox');
-// var userMessage = document.querySelector('#userMessageText');
 
-//Queryselectors for user add message//
+//Queryselectors for user add message🔺
 var addMessageButton = document.querySelector('#addMessageButton');
 
-//Functions:
+//👇 FUNCTIONS👇 //
 
-//Random message function:
+//Random message function👇 
 function getRandomIndex(messages) {
     var randomIndexNumber = Math.floor(Math.random() * messages.length);
     return messages[randomIndexNumber];
 }
 
-//Retrieving message function depending on mantras or affirmations array:
+//Retrieving message function depending on mantras or affirmations array👇 
 function createMessage() {
     var newMessage = "";
 
@@ -87,19 +87,14 @@ function createMessage() {
     return newMessage;
 }
  
-//Sets the message, hide or unhide message for mantra or affirmation message function:
+//Sets the message, hide or unhide message for mantra or affirmation message function👇 
 function changeElementVisibility() {
     hiddenMessage.innerText = createMessage();
     meditationIcon.style.display = "none";
     hiddenMessage.style.display = "block";
 }
 
-//FUNCTION
-function changeAddMessageVisibility() {
-    userHiddenBox.style.display = "block";
-}
-
-//Function for userMessage to appear:
+//Function for userMessage to appear👇 
 function userMessage() {
     var newUserMessage = "";
 
@@ -121,7 +116,13 @@ function changeUserMessageVisibility() {
     hiddenMessage.style.display = "block";
 }
 
-//Event Listener for recieve message button:
+function changeAddMessageVisibility() {
+    userHiddenBox.style.display = "block";
+}
+
+//🔸 EVENT LISTENERS🔸 //
+
+//Event Listener for the recieve message button🔸 
 receiveMessageButton.addEventListener("submit", (e) => {
     e.preventDefault();
     changeElementVisibility();
@@ -133,7 +134,7 @@ addMessageButton.addEventListener("click", (e) => {
 
 })
 
-//Event Listener for submit message button:
+//Event Listener for submit message button🔸 
 userMessageForm.addEventListener("submit", (e) => {
     e.preventDefault();
     userMessage();
